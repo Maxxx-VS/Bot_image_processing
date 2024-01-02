@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="c90872db-4c58-45fd-83f0-77f76011600a" name="Changes" comment="Бот для конвертации валюты">
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/pythonProject_Bot.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bot_aio.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Image_bot.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/currency.py" beforeDir="false" afterPath="$PROJECT_DIR$/currency.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/temp1.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/weather.py" beforeDir="false" afterPath="$PROJECT_DIR$/weather.py" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 1
+}</component>
+  <component name="ProjectId" id="2a5Hr7his7otdc5EJSQnYQm8tmA" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "Python.Image_bot.executor": "Run",
+    "Python.bot_aio.executor": "Run",
+    "Python.bot_db.executor": "Run",
+    "Python.currency.executor": "Run",
+    "Python.weather.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "master",
+    "last_opened_file_path": "C:/Users/hot-z/django2",
+    "settings.editor.selected.configurable": "preferences.keymap"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\hot-z\pythonProject_Bot" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="bot_db" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+      <module name="pythonProject_Bot" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="SDK_NAME" value="Python 3.11" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="C:\Users\hot-z\pythonProject_Bot\bot_db.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-python-sdk-67fca87a943a-d3b881c8e49f-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-233.11799.259" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="c90872db-4c58-45fd-83f0-77f76011600a" name="Changes" comment="" />
+      <created>1703601716301</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1703601716301</updated>
+    </task>
+    <task id="LOCAL-00001" summary="Создание бота, обработка комманд">
+      <option name="closed" value="true" />
+      <created>1703693987509</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1703693987509</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Бот отправляет на мой Git">
+      <option name="closed" value="true" />
+      <created>1703694811880</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1703694811880</updated>
+    </task>
+    <task id="LOCAL-00003" summary="В бот добавлены кнопки">
+      <option name="closed" value="true" />
+      <created>1703773319607</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1703773319607</updated>
+    </task>
+    <task id="LOCAL-00004" summary="В бот добавляем базу данных">
+      <option name="closed" value="true" />
+      <created>1703774918361</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1703774918361</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Две части бота. Кнопки и БД">
+      <option name="closed" value="true" />
+      <created>1703868894875</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1703868894875</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Бот для определения погоды">
+      <option name="closed" value="true" />
+      <created>1704020328789</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1704020328789</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Бот для конвертации валюты">
+      <option name="closed" value="true" />
+      <created>1704023702419</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1704023702419</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
+    <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="Создание бота, обработка комманд" />
+    <MESSAGE value="Бот отправляет на мой Git" />
+    <MESSAGE value="В бот добавлены кнопки" />
+    <MESSAGE value="В бот добавляем базу данных" />
+    <MESSAGE value="Две части бота. Кнопки и БД" />
+    <MESSAGE value="Бот для определения погоды" />
+    <MESSAGE value="Бот для конвертации валюты" />
+    <option name="LAST_COMMIT_MESSAGE" value="Бот для конвертации валюты" />
+  </component>
+</project>
