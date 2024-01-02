@@ -1,9 +1,11 @@
 import telebot
 import webbrowser
 from telebot import types
+
 from PIL import Image
-from filters import DarkFilter, BrightFilter, RedFilter, GreenFilter, BlueFilter, Drugs_eye, apply_filter
+from filters import DarkFilter, BrightFilter, RedFilter, GreenFilter, BlueFilter, apply_filter
 import os
+
 bot = telebot.TeleBot('6959262170:AAFZYR7aJG5sI2j2NfD44F9VNqc5gzsoH4Q')
 new_file = None
 
@@ -41,15 +43,41 @@ def get_photo(message):
     markup.row(btn_1, btn_2)
     markup.row(btn_3, btn_4, btn_5)
     markup.row(btn_6)
-    bot.reply_to(message, f"<b>Выбери один фильтр:</b>", reply_markup=markup, parse_mode='html')
+    bot.reply_to(message, f"<b>ВЫБЕРИ ОДИН ФИЛЬТР:</b>", reply_markup=markup, parse_mode='html')
 
 
 @bot.callback_query_handler(func=lambda callback: True)
 def callback_message(callback):
     if callback.data == 'dark_filter':
-        apply_filter(new_file, DarkFilter)
-        bot.send_message(callback.message.chat.id, "Кнопка была нажата!")
-        # bot.send_photo(message.chat.id, file, reply_markup=markup)
+        choice = 0
+    elif callback.data == 'light_filter':
+        choice = 1
+    elif callback.data == 'red_filter':
+        choice = 2
+    elif callback.data == 'green_filter':
+        choice = 3
+    else:
+        choice = 4
+    def processing():
+        filters = [DarkFilter, BrightFilter, RedFilter, GreenFilter, BlueFilter]
+        path = "C:/Users/hot-z/pythonProject_Bot/photos/file_0.jpeg"
+        img = Image.open(path).convert('RGB')
+        filt = filters[int(choice)]
+        img = apply_filter(img, filt)
+        img.show()
+    processing()
+    bot.send_message(callback.message.chat.id, "Твоя фотография была обработана:")
+
+
+@bot.message_handler(func=lambda msg: msg.text == 'text')
+def get_user_photo(message: types.Message):
+    file = open('C:/Users/hot-z/pythonProject_Bot/photos/file_0_NEW.jpeg', 'rb')
+    bot.send_photo(message.chat.id, file, reply_markup=markup)
+
+
+
+
+
 
 
 

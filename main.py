@@ -2,7 +2,7 @@ from PIL import Image
 from filters import DarkFilter, BrightFilter, RedFilter, GreenFilter, BlueFilter, Drugs_eye, apply_filter
 import os
 
-def main():
+def main1():
     filter_names = [
         "Уменьшить яркость",
         "Увеличить яркость",
@@ -53,5 +53,5 @@ def main():
 
         is_finished = answer == 'нет'
 
-if __name__ == "__main__":
-    main()
+# if __name__ == "__main__":
+main1()
