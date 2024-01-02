@@ -4,18 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c90872db-4c58-45fd-83f0-77f76011600a" name="Changes" comment="Бот для конвертации валюты">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/pythonProject_Bot.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bot_aio.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Image_bot.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/currency.py" beforeDir="false" afterPath="$PROJECT_DIR$/currency.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/temp1.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/weather.py" beforeDir="false" afterPath="$PROJECT_DIR$/weather.py" afterDir="false" />
+    <list default="true" id="c90872db-4c58-45fd-83f0-77f76011600a" name="Changes" comment="Бот на aiogram">
+      <change afterPath="$PROJECT_DIR$/AgACAgIAAxkBAAICNWWTxUNAcusAAXjjC2-_Yk_mQ-5NGwACn9MxG5eboUjQ8ZNPpRy7VAEAAwIAA3MAAzQE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bot.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bot_webapps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/filters.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/newAgACAgIAAxkBAAICO2WTxdIf8mnIOZnDX9JEgmGv1xhpAAKf0zEbl5uhSNDxk0-lHLtUAQADAgADcwADNAQ" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/photo_processig.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/photos/file_0.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/photos/file_2.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bot_butt.py" beforeDir="false" afterPath="$PROJECT_DIR$/bot_butt.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bot_mess+buttons.py" beforeDir="false" afterPath="$PROJECT_DIR$/bot_mess+buttons.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,6 +26,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="HTML File" />
         <option value="Python Script" />
       </list>
     </option>
@@ -46,19 +48,28 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "ASKED_ADD_EXTERNAL_FILES": "true",
+    "DefaultHtmlFileTemplate": "HTML File",
     "Python.Image_bot.executor": "Run",
     "Python.bot_aio.executor": "Run",
     "Python.bot_db.executor": "Run",
+    "Python.bot_mess+buttons.executor": "Run",
+    "Python.bot_webapps.executor": "Run",
     "Python.currency.executor": "Run",
+    "Python.filters.executor": "Run",
+    "Python.main.executor": "Run",
+    "Python.processing_photo.executor": "Run",
     "Python.weather.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "master",
-    "last_opened_file_path": "C:/Users/hot-z/django2",
+    "last_opened_file_path": "C:/Users/hot-z/pythonProject_Bot",
     "settings.editor.selected.configurable": "preferences.keymap"
   }
 }]]></component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\hot-z\pythonProject_Bot" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\hot-z\pythonProject_Bot" />
     </key>
@@ -160,7 +171,15 @@
       <option name="project" value="LOCAL" />
       <updated>1704023702419</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Бот на aiogram">
+      <option name="closed" value="true" />
+      <created>1704170064470</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1704170064470</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -172,6 +191,7 @@
     <MESSAGE value="Две части бота. Кнопки и БД" />
     <MESSAGE value="Бот для определения погоды" />
     <MESSAGE value="Бот для конвертации валюты" />
-    <option name="LAST_COMMIT_MESSAGE" value="Бот для конвертации валюты" />
+    <MESSAGE value="Бот на aiogram" />
+    <option name="LAST_COMMIT_MESSAGE" value="Бот на aiogram" />
   </component>
 </project>
