@@ -67,12 +67,16 @@ def callback_message(callback):
         img.show()
     processing()
     bot.send_message(callback.message.chat.id, "Твоя фотография была обработана:")
-
-
-@bot.message_handler(func=lambda msg: msg.text == 'text')
-def get_user_photo(message: types.Message):
+    # bot.register_next_step_handler(callback, text)
     file = open('C:/Users/hot-z/pythonProject_Bot/photos/file_0_NEW.jpeg', 'rb')
-    bot.send_photo(message.chat.id, file, reply_markup=markup)
+    bot.send_photo(callback.from_user.id, file)
+
+
+
+
+
+
+bot.polling(non_stop=True)
 
 
 
@@ -80,16 +84,7 @@ def get_user_photo(message: types.Message):
 
 
 
-
-
-
-
-
-
-
-
-
-
+    # bot.send_photo(message.chat.id, file, reply_markup=markup)
     # btn_0 = types.KeyboardButton('Загрузи свою фотографию:')
     # markup.row(btn_0)
     #
@@ -153,4 +148,3 @@ def get_user_photo(message: types.Message):
 
 
 
-bot.polling(non_stop=True)
