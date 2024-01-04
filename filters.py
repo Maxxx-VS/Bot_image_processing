@@ -39,5 +39,5 @@ def apply_filter(img: Image.Image, filt) -> Image.Image:
             r,g,b = img.getpixel((i, j))
             new_pixel = filt(r,g,b)
             img.putpixel((i, j), new_pixel)
-    img.save("C:/Users/hot-z/pythonProject_Bot/photos/file_0_NEW.jpeg")
+    img.save("C:/Users/hot-z/pythonProject_Bot/photos/processing_photo_on.jpeg")
     return img
