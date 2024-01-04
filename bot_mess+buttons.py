@@ -1,35 +1,31 @@
 import telebot
-import webbrowser
 from telebot import types
-
 from PIL import Image
 from filters import DarkFilter, BrightFilter, RedFilter, GreenFilter, BlueFilter, apply_filter
-import os
-
 bot = telebot.TeleBot('6959262170:AAFZYR7aJG5sI2j2NfD44F9VNqc5gzsoH4Q')
 new_file = None
 
-@bot.message_handler(commands=['help'])
+@bot.message_handler(commands=['help', 'info'])
 def start(message):
-    bot.send_message(message.chat.id, f'<em>Help inform:</em>', parse_mode='html')
+    bot.send_message(message.chat.id, f'<em>Витрина на оформлении 😁</em>', parse_mode='html')
 
 @bot.message_handler(commands=['start', 'main', 'hello'])
 def start(message):
-    bot.send_message(message.chat.id, f'Привет, {message.from_user.first_name}!')
-    bot.send_message(message.chat.id, f'👋🏻')
-    bot.send_message(message.chat.id, f'{message.from_user.first_name}, загрузи сюда фотографию:')
+    bot.send_message(message.chat.id, f'Привет 👋🏻, {message.from_user.first_name}!')
+    bot.send_message(message.chat.id, f'{message.from_user.first_name}, загрузи сюда фотографию\n'
+                                      f'или сделай селфи:')
 
 @bot.message_handler(content_types=['photo'])
 def get_photo(message):
     global new_file
+    global src
     try:
         file_info = bot.get_file(message.photo[len(message.photo) - 1].file_id) # загружаем фотографию
         downloaded_file = bot.download_file(file_info.file_path)
         src = './photos/' + file_info.file_path.replace('photos/', '')
         with open(src, 'wb') as new_file:
             new_file.write(downloaded_file)
-            new_file.close()
-        bot.reply_to(message, "Фото загружено")
+            #new_file.close()
     except Exception as e:
         bot.reply_to(message, e)
 
@@ -45,7 +41,6 @@ def get_photo(message):
     markup.row(btn_6)
     bot.reply_to(message, f"<b>ВЫБЕРИ ОДИН ФИЛЬТР:</b>", reply_markup=markup, parse_mode='html')
 
-
 @bot.callback_query_handler(func=lambda callback: True)
 def callback_message(callback):
     if callback.data == 'dark_filter':
@@ -59,22 +54,16 @@ def callback_message(callback):
     else:
         choice = 4
     def processing():
+        global img
         filters = [DarkFilter, BrightFilter, RedFilter, GreenFilter, BlueFilter]
-        path = "C:/Users/hot-z/pythonProject_Bot/photos/file_0.jpeg"
-        img = Image.open(path).convert('RGB')
+        # path = src
+        img = Image.open(src).convert('RGB')
         filt = filters[int(choice)]
         img = apply_filter(img, filt)
         img.show()
     processing()
-    bot.send_message(callback.message.chat.id, "Твоя фотография была обработана:")
-    # bot.register_next_step_handler(callback, text)
-    file = open('C:/Users/hot-z/pythonProject_Bot/photos/file_0_NEW.jpeg', 'rb')
-    bot.send_photo(callback.from_user.id, file)
-
-
-
-
-
+    bot.send_photo(callback.from_user.id, img)
+    bot.send_message(callback.message.chat.id, f"<b>ЗАГРУЖАЙ ЕЩЁ:</b>", parse_mode='html')
 
 bot.polling(non_stop=True)
 
