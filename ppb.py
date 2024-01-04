@@ -4,7 +4,7 @@ from telebot import types
 from PIL import Image
 from filters import DarkFilter, BrightFilter, RedFilter, GreenFilter, BlueFilter, apply_filter
 bot = telebot.TeleBot('6959262170:AAFZYR7aJG5sI2j2NfD44F9VNqc5gzsoH4Q')
-# new_file = None
+
 @bot.message_handler(commands=['help', 'info'])
 def start(message):
     bot.send_message(message.chat.id, f'<em>Витрина на оформлении 😁</em>', parse_mode='html')
@@ -13,14 +13,17 @@ def start(message):
     bot.send_message(message.chat.id, f'Привет 👋🏻, {message.from_user.first_name}!')
     bot.send_message(message.chat.id, f'{message.from_user.first_name}, загрузи сюда фотографию\n'
                                       f'или сделай селфи:')
-@bot.message_handler(content_types=['photo'])
+@bot.message_handler(content_types=['photo', 'document'])
 def get_photo(message):
-    global new_file
     global src
     try:
         file_info = bot.get_file(message.photo[len(message.photo) - 1].file_id) # загружаем фотографию
         downloaded_file = bot.download_file(file_info.file_path)
+        # src = 'C:/Users/hot-z/pythonProject_Bot/photos/' + message.document.file_12345
         src = './photos/' + file_info.file_path.replace('photos/', '')
+        #src = file_info.file_path
+        print(src)
+        print(file_info.file_path)
         with open(src, 'wb') as new_file:
             new_file.write(downloaded_file)
             #new_file.close()
@@ -36,7 +39,8 @@ def get_photo(message):
     markup.row(btn_1, btn_2)
     markup.row(btn_3, btn_4, btn_5)
     markup.row(btn_6)
-    bot.reply_to(message, f"<b>ВЫБЕРИ ОДИН ФИЛЬТР:</b>", reply_markup=markup, parse_mode='html')
+    bot.reply_to(message, f"<b>ВЫБЕРИ ОДИН ФИЛЬТР:\n"
+                          f"и немного подожди...</b>", reply_markup=markup, parse_mode='html')
 @bot.callback_query_handler(func=lambda callback: True)
 def callback_message(callback):
     if callback.data == 'dark_filter':
