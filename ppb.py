@@ -2,9 +2,7 @@ import webbrowser
 import telebot
 from telebot import types
 from PIL import Image
-from filters import DarkFilter, BrightFilter, RedFilter, GreenFilter, BlueFilter, apply_filter
 bot = telebot.TeleBot('6959262170:AAFZYR7aJG5sI2j2NfD44F9VNqc5gzsoH4Q')
-
 @bot.message_handler(commands=['help', 'info'])
 def start(message):
     bot.send_message(message.chat.id, f'<em>Витрина на оформлении 😁</em>', parse_mode='html')
@@ -19,14 +17,9 @@ def get_photo(message):
     try:
         file_info = bot.get_file(message.photo[len(message.photo) - 1].file_id) # загружаем фотографию
         downloaded_file = bot.download_file(file_info.file_path)
-        # src = 'C:/Users/hot-z/pythonProject_Bot/photos/' + message.document.file_12345
         src = './photos/' + file_info.file_path.replace('photos/', '')
-        #src = file_info.file_path
-        print(src)
-        print(file_info.file_path)
         with open(src, 'wb') as new_file:
             new_file.write(downloaded_file)
-            #new_file.close()
     except Exception as e:
         bot.reply_to(message, e)
     markup = types.InlineKeyboardMarkup()
@@ -59,12 +52,48 @@ def callback_message(callback):
         img = apply_filter(img, filt)
         img.show()
     processing()
-    bot.send_photo(callback.from_user.id, img)
+    bot.send_photo(callback.from_user.id, img) # возвращает фото с фильтром в чат
     bot.send_message(callback.message.chat.id, f"<b>ЗАГРУЖАЙ ЕЩЁ:</b>", parse_mode='html')
 @bot.message_handler(commands=['site', 'website'])
 def site(message):
     webbrowser.open('https://github.com/Maxxx-VS?tab=repositorie')
+def DarkFilter(r: int, g: int, b: int) -> tuple[int, int, int]:
+    result = []
+    for color in (r, g, b):
+        result = [int(r/3), int(g/3), int(b/3)]
+    return tuple(result)
+def BrightFilter(r: int, g: int, b: int) -> tuple[int, int, int]:
+    result = []
+    for color in (r, g, b):
+        result = [int(r*3), int(g*3), int(b*3)]
+    return tuple(result)
+def RedFilter(r: int, g: int, b: int) -> tuple[int, int, int]:
+    result = []
+    for color in (r, g, b):
+        result = [int(r*3), int(g*1), int(b*1)]
+    return tuple(result)
+def GreenFilter(r: int, g: int, b: int) -> tuple[int, int, int]:
+    result = []
+    for color in (r, g, b):
+        result = [int(r*1), int(g*3), int(b*1)]
+    return tuple(result)
+def BlueFilter(r: int, g: int, b: int) -> tuple[int, int, int]:
+    result = []
+    for color in (r, g, b):
+        result = [int(r*1), int(g*1), int(b*3)]
+    return tuple(result)
 
+img = Image.open("C:/Users/hot-z/pythonProject_Bot/photos/file_0.jpg").convert('RGB')
+width, height = img.size
+
+def apply_filter(img: Image.Image, filt) -> Image.Image:
+    for i in range(img.width):
+        for j in range(img.height):
+            r,g,b = img.getpixel((i, j))
+            new_pixel = filt(r,g,b)
+            img.putpixel((i, j), new_pixel)
+    img.save("C:/Users/hot-z/pythonProject_Bot/photos/processing_photo_on.jpeg")
+    return img
 bot.polling(non_stop=True)
 
 
@@ -73,39 +102,7 @@ bot.polling(non_stop=True)
 
 
 
-# def on_click(message):
-#
-#     if message.text == "GIT разработчика":
-#         bot.send_message(message.chat.id, 'GIT открыт')
-#     elif message.text == "Удалить фото":
-#         bot.send_message(message.chat.id, 'Фото удалено')
-#
-# @bot.message_handler(content_types=['photo'])
-# def get_photo(message):
-#     markup = types.InlineKeyboardMarkup()
-#     btn_1 = types.InlineKeyboardButton('GIT разработчика', url='https://github.com/Maxxx-VS?tab=repositorie')
-#     markup.row(btn_1)
-#     btn_2 = types.InlineKeyboardButton('Удалить фото', callback_data='delete')
-#     btn_3 = types.InlineKeyboardButton('Изменить текст', callback_data='edit')
-#     markup.row(btn_2, btn_3)
-#     bot.reply_to(message, 'Фото загружено', reply_markup=markup)
-#
-# @bot.callback_query_handler(func=lambda callback: True)
-# def callback_message(callback):
-#     if callback.data == 'delete':
-#         bot.delete_message(callback.message.chat.id, callback.message.message_id - 1)
-#     elif callback.data == 'edit':
-#         bot.edit_message_text('Edit text', callback.message.chat.id, callback.message.message_id)
-#
-#
 
-#
-# @bot.message_handler()
-# def info(message):
-#     if message.text.lower() == 'привет':
-#         bot.send_message(message.chat.id, f'Привет, {message.from_user.first_name} {message.from_user.last_name}')
-#     elif message.text.lower() == 'id':
-#         bot.reply_to(message, f'ID: {message.from_user.id}')
 
 
 
