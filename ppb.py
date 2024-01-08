@@ -53,8 +53,8 @@ def on_click(message):
     if message.text == '👆 УАЛИТЬ ВЕСЬ КОНТЕНТ 👆':
         for i in range (0, 100):
             bot.delete_message(message.chat.id, message.id - i)
-        bot.send_message(message.chat.id, "Весь контент НЕ удалён!\n"
-                                          "пока не работает...")
+    bot.send_message(message.chat.id, "Весь контент удалён!")
+
 @bot.callback_query_handler(func=lambda callback: True)
 def callback_message(callback):
     if callback.data == 'dark_filter':
@@ -68,9 +68,6 @@ def callback_message(callback):
     elif callback.data == 'blue_filter':
         filt = BlueFilter
     def processing():
-        # markup = types.ReplyKeyboardMarkup()
-        # btn = types.ReplyKeyboardMarkup("УДАЛИТЬ ПОСЛЕДНЕЕ ФОТО")
-        # markup.add(btn)
         global img
         img = Image.open(src).convert('RGB')
         img = apply_filter(img, filt)
@@ -78,7 +75,6 @@ def callback_message(callback):
     processing()
     bot.send_photo(callback.from_user.id, img) # возвращает фото с фильтром в чат
     bot.send_message(callback.message.chat.id, f"<b>ЗАГРУЖАЙ ЕЩЁ:</b>", parse_mode='html')
-
 def DarkFilter(r: int, g: int, b: int) -> tuple[int, int, int]:
     result = []
     for color in (r, g, b):
